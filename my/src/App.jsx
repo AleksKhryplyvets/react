@@ -1,25 +1,20 @@
-import { useState } from "react";
-import Button from "./Button";
+import { createContext, useState } from "react";
+import "./App.css"
+import Layout from './components/Layout';
+
+export const CountContext = createContext(null)
 
 function App() {
   const [count, setCount] = useState(0);
 
-  const incrementCount = () => {
-    setCount(count + 1);
-  };
-  const decrementCount = () => {
-    setCount(count - 1);
-  };
+  const value = {
+    count,
+    setCount
+  }
   return (
-    <div>
-      <div>{count}</div>
-      <div>
-        <Button text="Click me for plus" onClick={incrementCount} />
-      </div>
-      <div>
-        <Button text="Click me for minus" onClick={decrementCount} />
-      </div>
-    </div>
+    <CountContext.Provider value = {value}>
+      <Layout/>
+    </CountContext.Provider>
   );
 }
 
