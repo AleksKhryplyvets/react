@@ -1,8 +1,7 @@
-import List from "./List"
-const Layout = () =>{
-    return <div">
-        <List/>
+import Card from "./Card"
+const List = () => {
+    return <div>
+        <Card/>
     </div>
 }
-
-export default Layout
+export default List
